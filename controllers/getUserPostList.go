@@ -23,7 +23,6 @@ func GetUserPostList(c *gin.Context) {
 		lists = append(lists, list)
 	}
 	c.JSON(http.StatusOK, gin.H{
-		"status": 0,
 		"data": lists,
 	})
 }
