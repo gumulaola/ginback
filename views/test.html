@@ -1,0 +1,19 @@
+<form id="fileForm">
+  <input name="file" type="file" />
+  <button onclick="post()">submit</button>
+</form>
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+  function post() {
+    let form = document.querySelector("#fileForm");
+    let formData = new FormData(form);
+    axios.post("http://localhost:8080/upload", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      }
+    })
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
+  }
+</script>
