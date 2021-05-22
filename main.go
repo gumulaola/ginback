@@ -1,6 +1,7 @@
 package main
 
 import (
+	_ "gin-app/initDB"
 	"gin-app/routers"
 )
 
