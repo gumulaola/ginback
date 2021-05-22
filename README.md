@@ -1,1 +1,1 @@
-# gin-miniprogram-backend
+# gin-mini-program-backend
