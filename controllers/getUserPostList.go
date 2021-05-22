@@ -14,9 +14,9 @@ type List struct {
 }
 
 func GetUserPostList(c *gin.Context) {
-	code := c.Query("code")
+	openid := c.Query("openid")
 	lists := make([]List, 0)
-	rows, _ := initDB.DB.Query("select * from postlist where openid = ?", code)
+	rows, _ := initDB.DB.Query("select * from postlist where openid = ?", openid)
 	for rows.Next() {
 		var list List
 		rows.Scan(&list.Title, &list.Content, &list.Date, &list.Openid)

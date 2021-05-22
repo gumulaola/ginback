@@ -6,9 +6,9 @@ import (
 )
 
 func Create(c *gin.Context) {
-	title := c.PostForm("title")
-	content := c.PostForm("content")
-	date := c.PostForm("date")
-	openid := c.PostForm("openid")
+	title := c.Query("title")
+	content := c.Query("content")
+	date := c.Query("date")
+	openid := c.Query("openid")
 	initDB.DB.Exec("insert into postlist (title, content, date, openid) values (?, ?, ?, ?)", title, content, date, openid)
 }
