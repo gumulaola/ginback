@@ -1,8 +1,7 @@
 <form id="fileForm">
-  <input name="title" type="text" />
-  <input name="content" type="text" />
-  <input name="date" type="text" />
-  <input name="openid" type="text" />
+  <input name="file" type="file" />
+  <input name="course" type="text" />
+  <input name="chapter" type="text" />
   <button onclick="post()">submit</button>
 </form>
 
@@ -11,7 +10,7 @@
   function post() {
     let form = document.querySelector("#fileForm");
     let formData = new FormData(form);
-    axios.post("http://localhost:8080/create", formData, {
+    axios.post("http://localhost:8080/uploadfile", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       }
@@ -23,12 +22,4 @@
         console.log(err)
       })
   }
-
-  axios.get("http://localhost:8080/getpostlist?code=777")
-    .then(res => {
-      console.log(res)
-    })
-    .catch(err => {
-      console.log(err)
-    })
 </script>

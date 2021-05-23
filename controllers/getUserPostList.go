@@ -7,10 +7,10 @@ import (
 )
 
 type List struct {
-	Title string
+	Title   string
 	Content string
-	Date string
-	Openid string
+	Date    string
+	Openid  string
 }
 
 func GetUserPostList(c *gin.Context) {
