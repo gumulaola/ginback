@@ -1,4 +1,4 @@
-package controllers
+package miniprogram
 
 import (
 	"io/ioutil"

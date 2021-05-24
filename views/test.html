@@ -1,6 +1,6 @@
 <form id="fileForm">
   <input name="file" type="file" />
-  <input name="course" type="text" />
+  <input name="courseID" type="text" />
   <input name="chapter" type="text" />
   <button onclick="post()">submit</button>
 </form>
@@ -10,7 +10,7 @@
   function post() {
     let form = document.querySelector("#fileForm");
     let formData = new FormData(form);
-    axios.post("http://localhost:8080/uploadfile", formData, {
+    axios.post("http://localhost:8080/api/uploadfile", formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       }

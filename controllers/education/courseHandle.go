@@ -1,4 +1,4 @@
-package controllers
+package education
 
 import (
 	"gin-app/initDB"
@@ -10,6 +10,12 @@ type CourseList struct {
 	CourseID   int
 	CourseName string
 	CourseInfo string
+}
+
+func AddCourse(c *gin.Context) {
+	courseName := c.PostForm("coursename")
+	courseInfo := c.PostForm("courseinfo")
+	initDB.DB.Exec("insert into courselist (coursename, courseinfo) values (?, ?)", courseName, courseInfo)
 }
 
 func GetCourse(c *gin.Context) {

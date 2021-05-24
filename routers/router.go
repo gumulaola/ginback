@@ -2,6 +2,8 @@ package routers
 
 import (
 	"gin-app/controllers"
+	"gin-app/controllers/education"
+	"gin-app/controllers/miniprogram"
 	"net/http"
 
 	"github.com/gin-contrib/cors"
@@ -17,14 +19,14 @@ func InitRouter() *gin.Engine {
 
 	// for mini-program
 	r.GET("/", controllers.Index)
-	r.GET("/getopenid", controllers.GetOpenIdHandle)
-	r.GET("/getpostlist", controllers.GetUserPostList)
-	r.GET("/create", controllers.Create)
+	r.GET("/getopenid", miniprogram.GetOpenIdHandle)
+	r.GET("/getpostlist", miniprogram.GetUserPostList)
+	r.GET("/create", miniprogram.Create)
 
 	// for education
-	r.POST("/addcourse", controllers.AddCourse)
-	r.GET("/getcourse", controllers.GetCourse)
-	r.POST("/uploadfile", controllers.UploadFile)
-	r.GET("/getpdflist", controllers.GetPdfList)
+	r.POST("/api/addcourse", education.AddCourse)
+	r.GET("/api/getcourse", education.GetCourse)
+	r.POST("/api/uploadfile", education.UploadFile)
+	r.GET("/api/getpdflist", education.GetPdfList)
 	return r
 }
