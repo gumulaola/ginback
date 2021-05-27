@@ -7,9 +7,9 @@ import (
 )
 
 type PdfList struct {
-	PdfCourseID int
-	PdfChapter  string
-	PdfPath     string
+	PdfCourseID int    `json:"pdf_course_id"`
+	PdfChapter  string `json:"pdf_chapter"`
+	PdfPath     string `json:"pdf_path"`
 }
 
 func GetPdfList(c *gin.Context) {

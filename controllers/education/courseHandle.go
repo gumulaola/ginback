@@ -7,9 +7,9 @@ import (
 )
 
 type CourseList struct {
-	CourseID   int
-	CourseName string
-	CourseInfo string
+	CourseID   int    `json:"course_id"`
+	CourseName string `json:"course_name"`
+	CourseInfo string `json:"course_info"`
 }
 
 func AddCourse(c *gin.Context) {
