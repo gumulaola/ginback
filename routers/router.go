@@ -22,6 +22,7 @@ func InitRouter() *gin.Engine {
 	r.GET("/getopenid", miniprogram.GetOpenIdHandle)
 	r.GET("/getpostlist", miniprogram.GetUserPostList)
 	r.GET("/create", miniprogram.Create)
+	r.GET("/delete", miniprogram.Delete)
 
 	// for education
 	r.POST("/api/addcourse", education.AddCourse)
